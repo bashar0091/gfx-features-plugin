@@ -5,6 +5,7 @@
                 
                 $query->the_post();
 
+<<<<<<< HEAD
                 $before_image = '';
                 if( get_field('before_image_upload_url') ) {
                     $before_image = get_field('before_image_upload_url');
@@ -18,6 +19,10 @@
                 } else if( !empty(get_field('after_image')['url']))  {
                     $after_image = get_field('after_image')['url'];
                 }
+=======
+                $before_image = get_field('before_image');
+                $after_image = get_field('after_image');
+>>>>>>> 8c56f39bb7752fc6adbbff53d0387ac0fa3608a6
 
                 $post_author_id = get_post_field( 'post_author', get_the_ID() );
                 $author_first_name = get_the_author_meta( 'first_name', $post_author_id );
@@ -54,15 +59,24 @@
                         <input type="hidden" class="next_post_id" value="<?= $previous_post_id;?>">
                         
                         <!--  -->
+<<<<<<< HEAD
                         <input type="hidden" class="before_img_url" value="<?= esc_url($before_image);?>">
                         <input type="hidden" class="after_img_url" value="<?= esc_url($after_image);?>">
+=======
+                        <input type="hidden" class="before_img_url" value="<?= esc_url($before_image['url']);?>">
+                        <input type="hidden" class="after_img_url" value="<?= esc_url($after_image['url']);?>">
+>>>>>>> 8c56f39bb7752fc6adbbff53d0387ac0fa3608a6
 
                         <!--  -->
                         <input type="hidden" class="author_img_url" value="<?= wp_get_attachment_url($user_profile_image);?>">
                         <input type="hidden" class="author_name_val" value="<?=  $author_first_name . " " . $author_last_name;?>">
 
                         <!--  -->
+<<<<<<< HEAD
                         <img class="featured_image" src="<?= esc_url($before_image);?>" alt="image">
+=======
+                        <img class="featured_image" src="<?= esc_url($before_image['url']);?>" alt="image">
+>>>>>>> 8c56f39bb7752fc6adbbff53d0387ac0fa3608a6
                                 
                         <div class="author_info">
                             <div class="fz0">

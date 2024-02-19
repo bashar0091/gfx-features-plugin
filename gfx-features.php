@@ -18,11 +18,19 @@ function gfx_enqueue_scripts() {
     wp_enqueue_style('customd-style', plugin_dir_url(__FILE__) . 'assets/css/custom.css', false, time(), '');
 
     // js file 
+<<<<<<< HEAD
     wp_enqueue_script('masonry-script', plugin_dir_url(__FILE__) . 'assets/js/masonry.pkgd.min.js', array('jquery'), time(), true);
     wp_enqueue_script('beforeafter-script', plugin_dir_url(__FILE__) . 'assets/js/beforeafter.jquery-1.0.0.min.js', array('jquery'), time(), true);
     wp_enqueue_script('isotope-script', 'https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js', array('jquery'), time(), true);
     wp_enqueue_script('swiper-script', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array('jquery'), time(), true);
     wp_enqueue_script('custom-script', plugin_dir_url(__FILE__) . 'assets/js/custom.js', array('jquery'), time(), true);
+=======
+    wp_enqueue_script('masonry-script', plugin_dir_url(__FILE__) . 'assets/js/masonry.pkgd.min.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('beforeafter-script', plugin_dir_url(__FILE__) . 'assets/js/beforeafter.jquery-1.0.0.min.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('isotope-script', 'https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('swiper-script', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('custom-script', plugin_dir_url(__FILE__) . 'assets/js/custom.js', array('jquery'), '1.0.0', true);
+>>>>>>> 8c56f39bb7752fc6adbbff53d0387ac0fa3608a6
 
     // Ajax Request URL
     wp_localize_script('custom-script', 'formAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
@@ -36,11 +44,17 @@ function register_gfx_widget( $widgets_manager ) {
 
 	require_once( __DIR__ . '/widgets/masonary_post_layout.php' );
 	require_once( __DIR__ . '/widgets/single_post_layout.php' );
+<<<<<<< HEAD
     require_once( __DIR__ . '/widgets/category_slide.php' );
 
 	$widgets_manager->register( new \Elementor_masonary_post_layout() );
 	$widgets_manager->register( new \Elementor_single_post_layout() );
     $widgets_manager->register( new \Elementor_category_slide() );
+=======
+
+	$widgets_manager->register( new \Elementor_masonary_post_layout() );
+	$widgets_manager->register( new \Elementor_single_post_layout() );
+>>>>>>> 8c56f39bb7752fc6adbbff53d0387ac0fa3608a6
 
 }
 add_action( 'elementor/widgets/register', 'register_gfx_widget' );
@@ -148,6 +162,7 @@ function related_post_request_callback() {
                 $author_name = get_the_author_meta( 'first_name', $post_author_id ) . ' ' .get_the_author_meta( 'last_name', $post_author_id );
                 $user_profile_image = wp_get_attachment_url( get_the_author_meta( 'user_profile_image', $post_author_id ) );
 
+<<<<<<< HEAD
                 $before_image = '';
                 if( get_field('before_image_upload_url') ) {
                     $before_image = get_field('before_image_upload_url');
@@ -166,6 +181,12 @@ function related_post_request_callback() {
                 $response[] = array(
                     'before_image' => $before_image,
                     'after_image' => $after_image,
+=======
+                // Add post data to response array
+                $response[] = array(
+                    'before_image' => get_field('before_image'),
+                    'after_image' => get_field('after_image'),
+>>>>>>> 8c56f39bb7752fc6adbbff53d0387ac0fa3608a6
                     'author_name' => $author_name,
                     'user_profile_image' => $user_profile_image,
                     'post_link' => get_the_permalink(),

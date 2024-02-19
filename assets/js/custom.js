@@ -7,6 +7,7 @@ jQuery(document).ready(function($){
 		percentPosition: true
 	})
 
+<<<<<<< HEAD
 	// beforeAfter js 
 	jQuery('.beforeAfter').beforeAfter({
 		movable: true,
@@ -15,6 +16,22 @@ jQuery(document).ready(function($){
 		separatorColor: '#fafafa',
 		bulletColor: '#fafafa',
 	});
+=======
+     // grid layout js 
+    $('.post_grid_wrapper').masonry({
+        itemSelector: '.post_grid_item',
+        percentPosition: true
+    })
+
+    // beforeAfter js 
+    $('.beforeAfter').beforeAfter({
+        movable: true,
+        clickMove: true,
+        position: 50,
+        separatorColor: '#fafafa',
+        bulletColor: '#fafafa',
+    });
+>>>>>>> 8c56f39bb7752fc6adbbff53d0387ac0fa3608a6
 
     // popup open
     $('.post_grid_item .post_grid_cols').on('click', function(){
@@ -74,21 +91,34 @@ jQuery(document).ready(function($){
                     var postHtml = '<div class="post_grid_wrapper">';
                         posts.forEach(function(post) {
                             postHtml += `
+<<<<<<< HEAD
                                 <article class="post_grid_item related_grid_item related_grid_item_mob">
+=======
+                                <article class="post_grid_item related_grid_item">
+>>>>>>> 8c56f39bb7752fc6adbbff53d0387ac0fa3608a6
                                     <div class="post_grid_cols">
 
                                         <input type="hidden" class="post_link" value="${post.post_link}">
 
                                         <!--  -->
+<<<<<<< HEAD
                                         <input type="hidden" class="before_img_url" value="${post.before_image}">
                                         <input type="hidden" class="after_img_url" value="${post.after_image}">
+=======
+                                        <input type="hidden" class="before_img_url" value="${post.before_image.url}">
+                                        <input type="hidden" class="after_img_url" value="${post.after_image.url}">
+>>>>>>> 8c56f39bb7752fc6adbbff53d0387ac0fa3608a6
 
                                         <!--  -->
                                         <input type="hidden" class="author_img_url" value="${post.user_profile_image}">
                                         <input type="hidden" class="author_name_val" value="${post.author_name}">
 
                                         <!--  -->
+<<<<<<< HEAD
                                         <img class="featured_image" src="${post.before_image}" alt="image">
+=======
+                                        <img class="featured_image" src="${post.before_image.url}" alt="image">
+>>>>>>> 8c56f39bb7752fc6adbbff53d0387ac0fa3608a6
                                                 
                                         <div class="author_info">
                                             <div class="fz0">
@@ -274,7 +304,11 @@ jQuery(document).ready(function($){
         layoutMode: 'masonry'
     });
 
+<<<<<<< HEAD
     $('.category_wrap_2 .swiper-slide').click(function () {
+=======
+    $('.category_wrap .swiper-slide').click(function () {
+>>>>>>> 8c56f39bb7752fc6adbbff53d0387ac0fa3608a6
         $('.category_wrap .swiper-slide').removeClass('active');
         $(this).addClass('active');
 

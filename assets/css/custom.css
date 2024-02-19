@@ -271,9 +271,12 @@ span {
 .post_vieew {
     display: none;
 }
+<<<<<<< HEAD
 .category_wrap .swiper-slide.active {
 	color: var( --e-global-color-primary );
 }
+=======
+>>>>>>> 8c56f39bb7752fc6adbbff53d0387ac0fa3608a6
 
 @media (max-width: 1200px) {
     .post_grid_item {
@@ -284,22 +287,32 @@ span {
     }
 }
 @media (max-width: 767px) {
+<<<<<<< HEAD
 	.author_info {
 		visibility: hidden;
 		opacity: 0;
 	}
+=======
+>>>>>>> 8c56f39bb7752fc6adbbff53d0387ac0fa3608a6
     .post_grid_item {
         width: 100%;
     }
     .beforeAfter img {
         height: 400px !important;
     }
+<<<<<<< HEAD
+=======
+    .popup_head {
+        flex-direction: column;
+    }
+>>>>>>> 8c56f39bb7752fc6adbbff53d0387ac0fa3608a6
     .popup_wrap {
         padding: 10px;
     }
     .post_popup {
         padding: 16px 40px 100px 40px;
     }
+<<<<<<< HEAD
 	.post_popup {
 		padding: 40px 0 100px 0;
 	}
@@ -342,4 +355,6 @@ span {
 	.related_grid_item_mob {
 		width: 33.33%
 	}
+=======
+>>>>>>> 8c56f39bb7752fc6adbbff53d0387ac0fa3608a6
 }
